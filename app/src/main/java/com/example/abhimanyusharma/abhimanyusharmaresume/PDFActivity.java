@@ -169,11 +169,8 @@ public class PDFActivity extends AppCompatActivity {
 
         //document.newPage();
         BaseColor myColor1 = new BaseColor(2, 177, 178);//GREENY
-        BaseColor myColor2 = new BaseColor(95, 96, 108);//GRAYY
+        BaseColor myColor2 = new BaseColor(95, 96, 108);//GRAY
 
-        //Font allHeadingFont = new Font(Font.FontFamily.HELVETICA, 14, Font.BOLD, myColor1);
-        //Font headingFont = new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD | Font.UNDERLINE, BaseColor.GRAY);
-        //Font specialFont = new Font(Font.FontFamily.HELVETICA, 11, Font.NORMAL, BaseColor.DARK_GRAY);
         Font normalFont = new Font(Font.FontFamily.HELVETICA, 10, Font.NORMAL, myColor2);
         Font normalBoldFont = new Font(Font.FontFamily.HELVETICA, 10, Font.BOLD, myColor2);
         Font smallFont = new Font(Font.FontFamily.TIMES_ROMAN, 9, Font.BOLD, BaseColor.GRAY);
@@ -212,7 +209,7 @@ public class PDFActivity extends AppCompatActivity {
         //Add table Rows
         PdfPTable tbar = new PdfPTable(4);
         tbar.setWidthPercentage(100.0f);
-        tbar.setWidths(new int[] {4, 2, 3, 5});
+        tbar.setWidths(new int[]{4, 2, 3, 5});
 
         tbar.addCell(c1);
         tbar.addCell(c2);
@@ -225,7 +222,6 @@ public class PDFActivity extends AppCompatActivity {
         document.add(addEmptyLine(1));
 
 // MAIN PAGE START_________________________________________________________
-
 
 
         //BIGGEST TABLE
@@ -251,52 +247,89 @@ public class PDFActivity extends AppCompatActivity {
         bigT1.addCell(addEmptyLine(1));
 
 
-
         PdfPTable wbar = new PdfPTable(1);
         wbar.setWidthPercentage(100.0f);
         wbar.getDefaultCell().setBorder(PdfPCell.NO_BORDER);
 
-        //java.util.List<WorkExperienceData> list3 = WorkExperienceData.getWorkExperienceValue(u_userEmail);
+        Paragraph prWork1 = new Paragraph();
+        prWork1.setFont(normalBoldFont);
+        prWork1.add("1. Chief Technical Officer, Working at Resume Inc.");
+        prWork1.setAlignment(Element.ALIGN_LEFT);
 
-        //for (int i = 0; i < list3.size(); i++)
-        //{
-            //WorkExperienceData wed = list3.get(i);
+        Paragraph pr2 = new Paragraph();
+        pr2.setFont(smallFont);
+        pr2.add("(JUN 2017 \u2014 CURRENT)");
+        pr2.setAlignment(Element.ALIGN_LEFT);
 
-            //String status = "";
-            //if (wed.getW_radioGroup().equals("Current Employee")){
-            //    status = "Working";
-            //}
-            //else{
-            //    status = "Worked";
-            //}
+        Paragraph pr3 = new Paragraph();
+        pr3.setFont(normalFont);
+        pr3.add("Worked on Scientific and Technical issues of Resume Inc.");
+        pr3.setAlignment(Element.ALIGN_LEFT);
 
-            Paragraph prWork = new Paragraph();
-            prWork.setFont(normalBoldFont);
-            prWork.add("1. Chief Technical Officer, Working at Resume Inc.");
-            //prWork.add("\u2022  " + u_w_designation +  u_w_organization);
-            prWork.setAlignment(Element.ALIGN_LEFT);
-            //document.add(prWork);
+        Paragraph prWork4 = new Paragraph();
+        prWork4.setFont(normalBoldFont);
+        prWork4.add("2. Chief Technical Officer, Working at Resume Inc.");
+        prWork4.setAlignment(Element.ALIGN_LEFT);
 
-            Paragraph pr2 = new Paragraph();
-            pr2.setFont(smallFont);
-            //pe2.add("    " + u_w_start_date + " \u2014 " + u_w_end_date);
-            pr2.add("(JUN 2017 \u2014 CURRENT)");
-            pr2.setAlignment(Element.ALIGN_LEFT);
-            //document.add(pr2);
+        Paragraph pr5 = new Paragraph();
+        pr5.setFont(smallFont);
+        pr5.add("(JUN 2017 \u2014 CURRENT)");
+        pr5.setAlignment(Element.ALIGN_LEFT);
 
-            Paragraph pr3 = new Paragraph();
-            pr3.setFont(normalFont);
-            //pr3.add("    " + u_w_description);
-            pr3.add("Worked on Scientific and Technical issues of Resume Inc.");
-            pr3.setAlignment(Element.ALIGN_LEFT);
-            //document.add(pe3);
+        Paragraph pr6 = new Paragraph();
+        pr6.setFont(normalFont);
+        pr6.add("Worked on Scientific and Technical issues of Resume Inc.");
+        pr6.setAlignment(Element.ALIGN_LEFT);
 
-            //Add table Rows
+        Paragraph prWork7 = new Paragraph();
+        prWork7.setFont(normalBoldFont);
+        prWork7.add("3. Chief Technical Officer, Working at Resume Inc.");
+        prWork7.setAlignment(Element.ALIGN_LEFT);
 
-            wbar.addCell(prWork);
-            wbar.addCell(pr2);
-            wbar.addCell(pr3);
-        //}
+        Paragraph pr8 = new Paragraph();
+        pr8.setFont(smallFont);
+        pr8.add("(JUN 2017 \u2014 CURRENT)");
+        pr8.setAlignment(Element.ALIGN_LEFT);
+
+        Paragraph pr9 = new Paragraph();
+        pr9.setFont(normalFont);
+        pr9.add("Worked on Scientific and Technical issues of Resume Inc.");
+        pr9.setAlignment(Element.ALIGN_LEFT);
+
+        Paragraph prWork10 = new Paragraph();
+        prWork10.setFont(normalBoldFont);
+        prWork10.add("4. Chief Technical Officer, Working at Resume Inc.");
+        prWork10.setAlignment(Element.ALIGN_LEFT);
+
+        Paragraph pr11 = new Paragraph();
+        pr11.setFont(smallFont);
+        pr11.add("(JUN 2017 \u2014 CURRENT)");
+        pr11.setAlignment(Element.ALIGN_LEFT);
+
+        Paragraph pr12 = new Paragraph();
+        pr12.setFont(normalFont);
+        pr12.add("Worked on Scientific and Technical issues of Resume Inc.");
+        pr12.setAlignment(Element.ALIGN_LEFT);
+
+        //Add table Rows
+
+        wbar.addCell(prWork1);
+        wbar.addCell(pr2);
+        wbar.addCell(pr3);
+
+        //wbar.addCell(new Phrase(" "));
+
+        wbar.addCell(prWork4);
+        wbar.addCell(pr5);
+        wbar.addCell(pr6);
+
+        wbar.addCell(prWork7);
+        wbar.addCell(pr8);
+        wbar.addCell(pr9);
+
+        wbar.addCell(prWork10);
+        wbar.addCell(pr11);
+        wbar.addCell(pr12);
 
         //wbar.completeRow();
         bigT1.addCell(wbar);
@@ -315,66 +348,147 @@ public class PDFActivity extends AppCompatActivity {
         pebar.setWidthPercentage(100.0f);
         pebar.getDefaultCell().setBorder(PdfPCell.NO_BORDER);
 
-        //java.util.List<ProjectExperienceData> list2 = ProjectExperienceData.getProjectExperienceValue(u_userEmail);
+        Paragraph pe1 = new Paragraph();
+        pe1.setFont(normalBoldFont);
+        pe1.add("1. Abhimanyu Sharma Resume Coded    " + "(JULY - 2017)");
+        pe1.setAlignment(Element.ALIGN_LEFT);
 
-        //for (int i = 0; i < list2.size(); i++) {
-            //ProjectExperienceData ped = list2.get(i);
+        Paragraph pe2 = new Paragraph();
+        pe2.setFont(smallFont);
+        pe2.add("https://github.com/abhimanyu96edu/AbhimanyuSharmaResume");
+        pe2.setAlignment(Element.ALIGN_LEFT);
 
-            Paragraph pe1 = new Paragraph();
-            pe1.setFont(normalBoldFont);
-            pe1.add("1. Resume Inc.    " + "(JULY - 2017)");
-            pe1.setAlignment(Element.ALIGN_LEFT);
+        Paragraph pe3 = new Paragraph();
+        pe3.setFont(normalFont);
+        pe3.add("Worked on Scientific and Technical issues of Resume Inc. and created Resume Production Android App");
+        pe3.setAlignment(Element.ALIGN_LEFT);
 
-            Paragraph pe2 = new Paragraph();
-            pe2.setFont(smallFont);
-            pe2.add("https://github.com/abhimanyu96edu/AbhimanyuSharmaResume");
-            pe2.setAlignment(Element.ALIGN_LEFT);
+        Paragraph pe4 = new Paragraph();
+        pe4.setFont(normalBoldFont);
+        pe4.add("2. Resume Inc.    " + "(JULY - 2017)");
+        pe4.setAlignment(Element.ALIGN_LEFT);
 
-            Paragraph pe3 = new Paragraph();
-            pe3.setFont(normalFont);
-            pe3.add("Worked on Scientific and Technical issues of Resume Inc. and created Resume Production Android App");
-            pe3.setAlignment(Element.ALIGN_LEFT);
-            //document.add(pe2);
+        Paragraph pe5 = new Paragraph();
+        pe5.setFont(smallFont);
+        pe5.add("https://github.com/abhimanyu96edu/ResumeInc.");
+        pe5.setAlignment(Element.ALIGN_LEFT);
 
-            pebar.addCell(pe1);
-            pebar.addCell(pe2);
-            pebar.addCell(pe3);
-        //}
-        //pebar.completeRow();
+        Paragraph pe6 = new Paragraph();
+        pe6.setFont(normalFont);
+        pe6.add("Worked on Scientific and Technical issues of Resume Inc. and created Resume Production Android App");
+        pe6.setAlignment(Element.ALIGN_LEFT);
+
+        Paragraph pe7 = new Paragraph();
+        pe7.setFont(normalBoldFont);
+        pe7.add("3. Abhimanyu Sharma Resume    " + "(JULY - 2017)");
+        pe7.setAlignment(Element.ALIGN_LEFT);
+
+        Paragraph pe8 = new Paragraph();
+        pe8.setFont(smallFont);
+        pe8.add("https://github.com/abhimanyu96edu/AbhimanyuSharmaResume");
+        pe8.setAlignment(Element.ALIGN_LEFT);
+
+        Paragraph pe9 = new Paragraph();
+        pe9.setFont(normalFont);
+        pe9.add("Worked on Scientific and Technical issues of Resume Inc. and created Resume Production Android App");
+        pe9.setAlignment(Element.ALIGN_LEFT);
+
+        Paragraph pe10 = new Paragraph();
+        pe10.setFont(normalBoldFont);
+        pe10.add("4. Resume Inc.    " + "(JULY - 2017)");
+        pe10.setAlignment(Element.ALIGN_LEFT);
+
+        Paragraph pe11 = new Paragraph();
+        pe11.setFont(smallFont);
+        pe11.add("https://github.com/abhimanyu96edu/ResumeInc.");
+        pe11.setAlignment(Element.ALIGN_LEFT);
+
+        Paragraph pe12 = new Paragraph();
+        pe12.setFont(normalFont);
+        pe12.add("Worked on Scientific and Technical issues of Resume Inc. and created Resume Production Android App");
+        pe12.setAlignment(Element.ALIGN_LEFT);
+
+        Paragraph pe13 = new Paragraph();
+        pe13.setFont(normalBoldFont);
+        pe13.add("5. Resume Inc.    " + "(JULY - 2017)");
+        pe13.setAlignment(Element.ALIGN_LEFT);
+
+        Paragraph pe14 = new Paragraph();
+        pe14.setFont(smallFont);
+        pe14.add("https://github.com/abhimanyu96edu/ResumeInc.");
+        pe14.setAlignment(Element.ALIGN_LEFT);
+
+        Paragraph pe15 = new Paragraph();
+        pe15.setFont(normalFont);
+        pe15.add("Worked on Scientific and Technical issues of Resume Inc. and created Resume Production Android App");
+        pe15.setAlignment(Element.ALIGN_LEFT);
+
+        Paragraph pe16 = new Paragraph();
+        pe16.setFont(normalBoldFont);
+        pe16.add("6. Resume Inc.    " + "(JULY - 2017)");
+        pe16.setAlignment(Element.ALIGN_LEFT);
+
+        Paragraph pe17 = new Paragraph();
+        pe17.setFont(smallFont);
+        pe17.add("https://github.com/abhimanyu96edu/ResumeInc.");
+        pe17.setAlignment(Element.ALIGN_LEFT);
+
+        Paragraph pe18 = new Paragraph();
+        pe18.setFont(normalFont);
+        pe18.add("Worked on Scientific and Technical issues of Resume Inc. and created Resume Production Android App");
+        pe18.setAlignment(Element.ALIGN_LEFT);
+
+        Paragraph pe19 = new Paragraph();
+        pe19.setFont(normalBoldFont);
+        pe19.add("7. Resume Inc.    " + "(JULY - 2017)");
+        pe19.setAlignment(Element.ALIGN_LEFT);
+
+        Paragraph pe20 = new Paragraph();
+        pe20.setFont(smallFont);
+        pe20.add("https://github.com/abhimanyu96edu/ResumeInc.");
+        pe20.setAlignment(Element.ALIGN_LEFT);
+
+        Paragraph pe21 = new Paragraph();
+        pe21.setFont(normalFont);
+        pe21.add("Worked on Scientific and Technical issues of Resume Inc. and created Resume Production Android App");
+        pe21.setAlignment(Element.ALIGN_LEFT);
+
+        pebar.addCell(pe1);
+        pebar.addCell(pe2);
+        pebar.addCell(pe3);
+
+        pebar.addCell(pe4);
+        pebar.addCell(pe5);
+        pebar.addCell(pe6);
+
+        pebar.addCell(pe7);
+        pebar.addCell(pe8);
+        pebar.addCell(pe9);
+
+        pebar.addCell(pe10);
+        pebar.addCell(pe11);
+        pebar.addCell(pe12);
+
+        pebar.addCell(pe13);
+        pebar.addCell(pe14);
+        pebar.addCell(pe15);
+
+        pebar.addCell(pe16);
+        pebar.addCell(pe17);
+        pebar.addCell(pe18);
+
+        pebar.addCell(pe19);
+        pebar.addCell(pe20);
+        pebar.addCell(pe21);
+
+
         bigT1.addCell(pebar);
 
-        bigT1.addCell(addEmptyLine(1));
-        bigT1.addCell(addHeadTitle("Languages"));
-        bigT1.addCell(addEmptyLine(1));
 
-        //java.util.List<LanguageData> listL = LanguageData.getLanguageValue(u_userEmail);
-        //list.setSymbolIndent(42);
-
-        PdfPTable languageTable = new PdfPTable(2);//use autocomplete()
-        languageTable.setWidthPercentage(100);
-        languageTable.getDefaultCell().setBorder(PdfPCell.NO_BORDER);
-
-        //for (int i = 0; i < listL.size(); i++) {
-            //LanguageData ld = listL.get(i);
-
-            Paragraph prLanguage = new Paragraph();
-            prLanguage.setFont(normalFont);
-            prLanguage.add("•  French \n");
-            prLanguage.add("•  German \n");
-            prLanguage.add("•  Spanish \n");
-            prLanguage.add("•  Spanish \n");
-            prLanguage.setAlignment(Element.ALIGN_LEFT);
-
-            languageTable.addCell(prLanguage);
-            //document.add(prSkills);
-        //}
-        languageTable.completeRow();
-        bigT1.addCell(languageTable);
 
         //________________________________________________________________________
         //EDUCATION
 
-        //bigT2.addCell(addColorLineEmptyTable(1));
         bigT2.addCell(addHeadTitle("Education Qualification"));
         bigT2.addCell(addEmptyLine(1));
 
@@ -383,28 +497,37 @@ public class PDFActivity extends AppCompatActivity {
         ebar.setWidthPercentage(100.0f);
         ebar.getDefaultCell().setBorder(PdfPCell.NO_BORDER);
 
-        //java.util.List<EducationData> list1 = EducationData.getEducationValue(u_userEmail);
+        //Generate Contents
+        Paragraph e1 = new Paragraph();
+        e1.setFont(normalFont);
+        e1.add("\u2022 B.Tech from AKTU University (State Government)\n");
+        e1.add(" (2018)" + "\n");
+        e1.add(" Scored 73% (till 6th sem)\n");
+        e1.setAlignment(Element.ALIGN_LEFT);
 
-        //for (int i = 0; i < list1.size(); i++) {
-            //EducationData ed = list1.get(i);
+        Paragraph e2 = new Paragraph();
+        e2.setFont(normalFont);
+        e2.add("\u2022 Secondary School from CBSE\n");
+        e2.add(" (2014)" + "\n");
+        e2.add(" Scored 78% \n");
+        e2.setAlignment(Element.ALIGN_LEFT);
 
-            //Generate Contents
-            Paragraph e1 = new Paragraph();
-            e1.setFont(normalFont);
-            e1.add("\u2022 B.Tech from AKTU University (State Government)\n");
-            e1.add( " (2018)" + "\n");
-            e1.add(" Scored 73% (till 6th sem)\n");
-            e1.setAlignment(Element.ALIGN_LEFT);
+        Paragraph e3 = new Paragraph();
+        e3.setFont(normalFont);
+        e3.add("\u2022 High School from CBSE\n");
+        e3.add(" (2012)" + "\n");
+        e3.add(" Scored 9.4 - A1 (CGPA)\n");
+        e3.setAlignment(Element.ALIGN_LEFT);
 
-            ebar.addCell(e1);
-        //}
-        //ebar.completeRow();
+        ebar.addCell(e1);
+        ebar.addCell(e2);
+        ebar.addCell(e3);
+
         bigT2.addCell(ebar);
 
         //________________________________________________________________________
         //SKILLS
 
-        //bigT2.addCell(addColorLineEmptyTable(1));
         bigT2.addCell(addEmptyLine(1));
         bigT2.addCell(addHeadTitle("Skills and Competences"));
         bigT2.addCell(addEmptyLine(1));
@@ -414,21 +537,24 @@ public class PDFActivity extends AppCompatActivity {
         sbar.setWidthPercentage(100.0f);
         sbar.getDefaultCell().setBorder(PdfPCell.NO_BORDER);
 
-        //java.util.List<TechnicalSkillsData> list4 = TechnicalSkillsData.getTs_descriptionValue(u_userEmail);
+        Paragraph prSkills = new Paragraph();
+        prSkills.setFont(normalFont);
+        prSkills.add("•  Android App Development\n");
+        prSkills.add("•  Java Programming\n");
+        prSkills.add("•  Algorithms & Software Development\n");
+        prSkills.add("•  C/C++ Programming");
+        prSkills.add("•  Android App Development\n");
+        prSkills.add("•  Java Programming\n");
+        prSkills.add("•  Algorithms & Software Development\n");
+        prSkills.add("•  C/C++ Programming");
+        prSkills.add("•  Android App Development\n");
+        prSkills.add("•  Java Programming\n");
+        prSkills.add("•  Algorithms & Software Development\n");
+        prSkills.add("•  C/C++ Programming");
+        prSkills.setAlignment(Element.ALIGN_LEFT);
 
-        //for (int i = 0; i < list4.size(); i++) {
-            //TechnicalSkillsData tsd = list4.get(i);
+        sbar.addCell(prSkills);
 
-            Paragraph prSkills = new Paragraph();
-            prSkills.setFont(normalFont);
-            prSkills.add("•  Android App Development\n");
-            prSkills.add("•  Java Programming\n");
-            prSkills.add("•  Algorithms & Software Development\n");
-            prSkills.add("•  C/C++ Programming");
-            prSkills.setAlignment(Element.ALIGN_LEFT);
-
-            sbar.addCell(prSkills);
-        //}
         //sbar.completeRow();
         bigT2.addCell(sbar);
 
@@ -441,23 +567,67 @@ public class PDFActivity extends AppCompatActivity {
         bigT2.addCell(addEmptyLine(1));
 
         PdfPTable abar = new PdfPTable(1);
-        abar.setWidthPercentage(100);
+        abar.setWidthPercentage(100.0f);
         abar.getDefaultCell().setBorder(PdfPCell.NO_BORDER);
 
-        //java.util.List<AchievementData> list5 = AchievementData.getAchievementValue(u_userEmail);
-
-
-        //for (int i = 0; i < list5.size(); i++) {
-            //AchievementData ad = list5.get(i);
-
-            Paragraph prAchievements = new Paragraph();
-            prAchievements.setFont(normalFont);
-            prAchievements.add("\u2022   CTO at Resume Inc.\n");
-            prAchievements.add("\u2022   Full Stack Developer at Resume Inc.\n");
-            prAchievements.setAlignment(Element.ALIGN_LEFT);
-            abar.addCell(prAchievements);
+        Paragraph prAchievements = new Paragraph();
+        prAchievements.setFont(normalFont);
+        prAchievements.add("\u2022   CTO at Resume Inc.\n");
+        prAchievements.add("\u2022   Full Stack Developer at Resume Inc.\n");
+        prAchievements.add("\u2022   CTO at Resume Inc.\n");
+        prAchievements.add("\u2022   Full Stack Developer at Resume Inc.\n");
+        prAchievements.add("\u2022   CTO at Resume Inc.\n");
+        prAchievements.add("\u2022   Full Stack Developer at Resume Inc.\n");
+        prAchievements.setAlignment(Element.ALIGN_LEFT);
+        abar.addCell(prAchievements);
         //}
         bigT2.addCell(abar);
+
+
+        //Position of Responsibilty
+
+        bigT2.addCell(addEmptyLine(1));
+        bigT2.addCell(addHeadTitle("Position Of Responsibilities"));
+        bigT2.addCell(addEmptyLine(1));
+
+        PdfPTable porTable = new PdfPTable(2);//use autocomplete()
+        porTable.setWidthPercentage(100.0f);
+        porTable.setWidths(new int[]{1, 1});
+        porTable.getDefaultCell().setBorder(PdfPCell.NO_BORDER);
+
+        Paragraph por1 = new Paragraph();
+        por1.setFont(normalFont);
+        por1.add("•  Chief Technical Officer \n");
+        por1.add("•  Chief Executive Officer \n");
+        por1.add("•  Management Head \n");
+        por1.add("•  Full Stack Development Manager \n");
+        por1.add("•  Marketing & Promotions Manager \n");
+        por1.add("•  Chief Technical Officer \n");
+        por1.add("•  Chief Executive Officer \n");
+        por1.add("•  Management Head \n");
+        por1.add("•  Full Stack Development Manager \n");
+        por1.add("•  Marketing & Promotions Manager \n");
+        por1.add("•  Chief Technical Officer \n");
+        por1.add("•  Chief Executive Officer \n");
+        por1.add("•  Full Stack Development Manager \n");
+        por1.add("•  Marketing & Promotions Manager \n");
+        por1.setAlignment(Element.ALIGN_LEFT);
+
+        Paragraph por2 = new Paragraph();
+        por2.setFont(normalFont);
+        por2.add("•  Chief Technical Officer \n");
+        por2.add("•  Chief Executive Officer \n");
+        por2.add("•  Management Head \n");
+        por2.add("•  Full Stack Development Manager \n");
+        por2.add("•  Marketing & Promotions Manager \n");
+        por2.setAlignment(Element.ALIGN_LEFT);
+
+        porTable.addCell(por1);
+        porTable.addCell(por2);
+
+        porTable.completeRow();
+
+        bigT2.addCell(porTable);
 
         bigT.setSplitLate(false);
         bigT1.setSplitLate(false);
@@ -513,11 +683,10 @@ public class PDFActivity extends AppCompatActivity {
     }
 
 
-
     private Paragraph addHeadTitle(String s) {
 
         BaseColor myColor2 = new BaseColor(2, 177, 178);//GREENY
-        Font allHeadingFont = new Font(Font.FontFamily.HELVETICA, 14, Font.UNDERLINE| Font.BOLD, myColor2);
+        Font allHeadingFont = new Font(Font.FontFamily.HELVETICA, 14, Font.UNDERLINE | Font.BOLD, myColor2);
         Paragraph prHead = new Paragraph();
         prHead.setFont(allHeadingFont);
         prHead.add(s);

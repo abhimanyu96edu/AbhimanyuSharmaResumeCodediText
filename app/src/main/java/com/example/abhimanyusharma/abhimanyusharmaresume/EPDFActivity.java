@@ -1,11 +1,11 @@
 package com.example.abhimanyusharma.abhimanyusharmaresume;
 
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,14 +32,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class PDFActivity extends AppCompatActivity {
+public class EPDFActivity extends AppCompatActivity {
 
     TextView tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pdf);
+        setContentView(R.layout.activity_epdf);
 
         tv = (TextView) findViewById(R.id.tv);
 
@@ -49,7 +49,7 @@ public class PDFActivity extends AppCompatActivity {
         File myDir = new File(root + "/A_PDF");
         myDir.mkdirs();
 
-        String FILE = Environment.getExternalStorageDirectory().toString() + "/A_PDF/Abhimanyu_Sharma_Resume.pdf";
+        String FILE = Environment.getExternalStorageDirectory().toString() + "/A_PDF/Abhimanyu_Sharma_E_Resume.pdf";
 
 // Create New Blank Document
         Document document = new Document(PageSize.A4, 15, 15, 20, 10); //left, right, top, bottom
@@ -360,23 +360,23 @@ public class PDFActivity extends AppCompatActivity {
 
 
         pebar.addCell(pe1);
-        //pebar.addCell(pe2);
+        pebar.addCell(pe2);
         pebar.addCell(pe3);
 
         pebar.addCell(pe4);
-        //pebar.addCell(pe5);
+        pebar.addCell(pe5);
         pebar.addCell(pe6);
 
         pebar.addCell(pe7);
-        //pebar.addCell(pe8);
+        pebar.addCell(pe8);
         pebar.addCell(pe9);
 
         pebar.addCell(pe10);
-        //pebar.addCell(pe11);
+        pebar.addCell(pe11);
         pebar.addCell(pe12);
 
         pebar.addCell(pe13);
-        //pebar.addCell(pe14);
+        pebar.addCell(pe14);
         pebar.addCell(pe15);
 
 
@@ -711,7 +711,7 @@ public class PDFActivity extends AppCompatActivity {
 
     public void requestPermissions() {
         Log.d("RESULT", "----------------------------------requestPermissions: ");
-        ActivityCompat.requestPermissions(PDFActivity.this, new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE,
+        ActivityCompat.requestPermissions(EPDFActivity.this, new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE,
                 android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, 100);
     }
 

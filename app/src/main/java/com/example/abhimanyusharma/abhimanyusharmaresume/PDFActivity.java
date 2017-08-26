@@ -124,24 +124,21 @@ public class PDFActivity extends AppCompatActivity {
         Paragraph row2 = new Paragraph();
         row2.setFont(new Font(Font.FontFamily.HELVETICA, 10, Font.BOLD, myColor2));
         row2.setAlignment(Element.ALIGN_CENTER);
-        row2.add("\nMy Career Objective is to pursue an advanced development career oriented towards Mobile Application and Software Development and to contribute " +
-                "efficiently my skills and abilities for the growth of the organization along with enhancing my skills, knowledge and abilities by practical application\n");
+        row2.add("\nMy Objective is to pursue an advanced development career oriented towards Mobile Application and Software Development and to contribute " +
+                "efficiently my skills and abilities for the growth of the organization along with enhancing my skills, knowledge and abilities by practical application\n ");
 
-        Paragraph row3 = new Paragraph();
-        row3.setFont(new Font(Font.FontFamily.HELVETICA, 9, Font.NORMAL, myColor2));
-        row3.setAlignment(Element.ALIGN_CENTER);
-        row3.setLeading(15, 0);
-        row3.add("\n(B.Tech 4th Year, Computer Science Engineering, Galgotias College of Engineering & Technology)\n");
+        Paragraph row4 = new Paragraph();
+        row4.setFont(new Font(Font.FontFamily.HELVETICA, 8, Font.NORMAL, myColor2));
+        row4.setAlignment(Element.ALIGN_CENTER);
+        row4.add("(B.Tech 4th Year, Computer Science Engineering, Galgotias College of Engineering & Technology)");
 
 
         PdfPCell row_1 = new PdfPCell(row1);
         PdfPCell row_2 = new PdfPCell(row2);
-        PdfPCell row_3 = new PdfPCell(row3);
-        PdfPCell row_4 = new PdfPCell(new Phrase(" \n"));
+        PdfPCell row_4 = new PdfPCell(row4);
 
         row_1.setBorder(Rectangle.NO_BORDER);
         row_2.setBorder(Rectangle.NO_BORDER);
-        row_3.setBorder(Rectangle.NO_BORDER);
         row_4.setBorder(Rectangle.NO_BORDER);
 
         //Add table Rows
@@ -149,8 +146,7 @@ public class PDFActivity extends AppCompatActivity {
         th.setWidthPercentage(100.0f);
 
         th.addCell(row_1);
-        th.addCell(row_3);
-        //th.addCell(row_4);//for spaced line
+        th.addCell(row_4);//for spaced line
         th.addCell(row_2);
 
         InputStream inputStream = getAssets().open("logo.png");
@@ -173,7 +169,7 @@ public class PDFActivity extends AppCompatActivity {
 
         document.add(tH);
 
-        document.add(addEmptyLine(1));
+        //document.add(addEmptyLine(1));
         document.add(addColorLineEmptyTableGray(1));
 
     }
@@ -202,12 +198,12 @@ public class PDFActivity extends AppCompatActivity {
         Paragraph portfolioBar = new Paragraph();
         portfolioBar.setFont(new Font(Font.FontFamily.HELVETICA, 8, Font.BOLD, myColor1));
         portfolioBar.setAlignment(Element.ALIGN_CENTER);
-        portfolioBar.add("abhimanyu96edu.github.io");
+        portfolioBar.add("https://abhimanyu96edu.github.io");
 
         Paragraph addressBar = new Paragraph();
         addressBar.setFont(new Font(Font.FontFamily.HELVETICA, 8, Font.BOLD, myColor1));
         addressBar.setAlignment(Element.ALIGN_CENTER);
-        addressBar.add("Room-204, Boys Hostel, Galgotias campus 1, Greater Noida");
+        addressBar.add("");
 
         PdfPCell c1 = new PdfPCell(emailBar);
         PdfPCell c2 = new PdfPCell(numberBar);
@@ -222,7 +218,7 @@ public class PDFActivity extends AppCompatActivity {
         //Add table Rows
         PdfPTable tbar = new PdfPTable(4);
         tbar.setWidthPercentage(100.0f);
-        tbar.setWidths(new int[]{4, 2, 3, 5});
+        tbar.setWidths(new int[]{4, 2, 3, 4});
 
         tbar.addCell(c1);
         tbar.addCell(c2);
@@ -269,7 +265,7 @@ public class PDFActivity extends AppCompatActivity {
 
         Paragraph pe1 = new Paragraph();
         pe1.setFont(normalBoldFont);
-        pe1.add("1. Rinc. Resume App    " + "(JULY - 2017)");
+        pe1.add("\nRinc. Resume App    " + "(JULY 2017)");
         pe1.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph pe2 = new Paragraph();
@@ -281,14 +277,13 @@ public class PDFActivity extends AppCompatActivity {
 
         Paragraph pe3 = new Paragraph();
         pe3.setFont(normalFont);
-        pe3.add("Rinc. Resume is a resume builder application. The App uses Active Android for complex database management, iText library for PDF, " +
-                "user friendly material design UI & a totally offline application.\n");
+        pe3.add("Worked with Active Android for complex database management, iText library for PDF, Material Design UI & created a totally Offline Application\n");
         pe3.setAlignment(Element.ALIGN_LEFT);
 
 
         Paragraph pe4 = new Paragraph();
         pe4.setFont(normalBoldFont);
-        pe4.add("3. Bit Math (Android GAME)    " + "(MAY - 2017)");
+        pe4.add("\nBit Math    " + "(MAY 2017)");
         pe4.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph pe5 = new Paragraph();
@@ -300,13 +295,12 @@ public class PDFActivity extends AppCompatActivity {
 
         Paragraph pe6 = new Paragraph();
         pe6.setFont(normalFont);
-        pe6.add("Bit Math is an Android Game which tests how fast user can calculate sum of two numbers within " +
-                "30 Seconds of time limit. It has an Interactive layout with animations. It is in development mode.\n");
+        pe6.add("Worked with animations and interactive layouts, concepts of probability are applied to generate random numbers with increasing difficulty\n");
         pe6.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph pe7 = new Paragraph();
         pe7.setFont(normalBoldFont);
-        pe7.add("4. Customer Sentiment Analyzer App    " + "(APRIL - 2017)");
+        pe7.add("\nCustomer Sentiment Analyzer App    " + "(APRIL 2017)");
         pe7.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph pe8 = new Paragraph();
@@ -318,13 +312,13 @@ public class PDFActivity extends AppCompatActivity {
 
         Paragraph pe9 = new Paragraph();
         pe9.setFont(normalFont);
-        pe9.add("It is a Real-Time Sentiment Analyzer & performs Audio Analysis and provides a Report which is Analysed to " +
-                "extract information. It uses Natural Language Processing Algorithm to parse the input, analyze it and provide a valid sentiment.\n");
+        pe9.add("Worked with Natural Language Processing Algorithm & IBM Watson APIS, App performs Real-Time Sentiment Analysis by first " +
+                "performing Audio Analysis & then applying NLP on extracted information for providing a valid sentiment\n");
         pe9.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph pe10 = new Paragraph();
         pe10.setFont(normalBoldFont);
-        pe10.add("5. Weather Forecast App    " + "(JULY - 2017)");
+        pe10.add("\nWeather Forecast App    " + "(DEC 2017)");
         pe10.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph pe11 = new Paragraph();
@@ -336,13 +330,12 @@ public class PDFActivity extends AppCompatActivity {
 
         Paragraph pe12 = new Paragraph();
         pe12.setFont(normalFont);
-        pe12.add("This app uses APIs and JSON for fetching weather data and location information. " +
-                "It shows the condition of the current location as well as any location in the world with 5 days weather forecast.\n");
+        pe12.add("Used OWM POST APIs and parsed JSON response for fetching weather and location data along with 5 days forecast\n");
         pe12.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph pe13 = new Paragraph();
         pe13.setFont(normalBoldFont);
-        pe13.add("6. Expense Manager App    " + "(JULY - 2017)");
+        pe13.add("\nExpense Manager App    " + "(JULY 2016)");
         pe13.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph pe14 = new Paragraph();
@@ -354,8 +347,7 @@ public class PDFActivity extends AppCompatActivity {
 
         Paragraph pe15 = new Paragraph();
         pe15.setFont(normalFont);
-        pe15.add("Expense Manager helps to maintain the record of expenses, shows balance from allocated budget. We can add, " +
-                "update or delete expenses. It saves time and money by keeping a clean and accurate record.\n");
+        pe15.add("Worked with SQL for complex database management, developed interactive & user friendly UI\n");
         pe15.setAlignment(Element.ALIGN_LEFT);
 
 
@@ -408,6 +400,14 @@ public class PDFActivity extends AppCompatActivity {
         //pebar.addCell(pexTable);
         bigT1.addCell(pebar);
 
+        Font moreProjectFont = new Font(Font.FontFamily.HELVETICA, 8, Font.UNDERLINE | Font.BOLD, new BaseColor(95, 96, 108));
+        Paragraph pmLink = new Paragraph();
+        pmLink.setFont(moreProjectFont);
+        pmLink.add("\nOther Important Projects are:\n ");
+        pmLink.setAlignment(Element.ALIGN_LEFT);
+
+        bigT1.addCell(pmLink);
+
         bigT1.addCell(pexTable);
 
 /*****/ //ADD PROJECT LINK
@@ -442,13 +442,9 @@ public class PDFActivity extends AppCompatActivity {
 
         Paragraph por1 = new Paragraph();
         por1.setFont(normalFont);
-        por1.add("•  Conducted Android Workshop in Galgotias College held on 19 November 2016\n");
-        por1.add("•  Team Leader and Event Coordinator of Japanese Anime Cosplay event “Animatsuri”, at Rendezvous IIT-Delhi in 2015\n");
-        por1.add("•  Conducted Mobile Quiz event in the annual technical fest of Computer Science and Engineering Department in 2017\n");
-        por1.add("•  Conducted CRYPTOX Technical event at annual technical fest DAKSH of Computer Science Department in 2016\n");
-        por1.add("•  Coordinator of Galgotia’s Gaming Club – FRAG, Programming Club-LOOP, Sports Club\n");
-        por1.add("•  Member of Galgotias Extreme Club, Enthiran Club\n");
-        por1.add("•  Conducted ENIGMA-II Technical event in Metacognition held at Galgotias College Technical Fest in 2015\n");
+        por1.add("\n•  Conducted Android Workshop, Mobile Quiz,\n   ENIGMA-II, CRYPTOX at Galgotias College\n   (2015-2017)\n");
+        por1.add("\n•  Team Leader and Event Coordinator of Japanese\n   Anime Cosplay event “Animatsuri”, Rendezvous IIT-Delhi\n   (2015)\n");
+        por1.add("\n•  Coordinator/Member LOOP Programming Club, FRAG\n   Gaming Club, Extreme Club, Sports Club, Enthiran Club\n   (2014-2017)\n");
         por1.setAlignment(Element.ALIGN_LEFT);
 
         porTable.addCell(por1);
@@ -470,7 +466,7 @@ public class PDFActivity extends AppCompatActivity {
 
         Paragraph prWork1 = new Paragraph();
         prWork1.setFont(normalBoldFont);
-        prWork1.add("1. Technical Intern, Worked at SHOPVIEW");
+        prWork1.add("\nAndroid Intern, Worked at SHOPVIEW");
         prWork1.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph pr2 = new Paragraph();
@@ -480,13 +476,13 @@ public class PDFActivity extends AppCompatActivity {
 
         Paragraph pr3 = new Paragraph();
         pr3.setFont(normalFont);
-        pr3.add("•  Worked on ShopView Android Application Modules\n");
-        pr3.add("•  Worked on Volley for GET and POST APIs, Database Management using Active Android, Optical Character Recognition and JSON response parsing\n");
+        pr3.add("•  Worked on Volley for GET and POST APIs, Database\n   Management using Active Android, Optical Character\n   Recognition and JSON response parsing\n");
+        pr3.add("•  Worked on different ShopView application modules\n");
         pr3.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph prWork4 = new Paragraph();
         prWork4.setFont(normalBoldFont);
-        prWork4.add("2. Android Developer Intern, Worked at PAPSWAP");
+        prWork4.add("\nTechnical Intern, Worked at PAPSWAP");
         prWork4.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph pr5 = new Paragraph();
@@ -498,12 +494,12 @@ public class PDFActivity extends AppCompatActivity {
         pr6.setFont(normalFont);
         pr6.add("•  Worked on PAPSWAP Android Application\n");
         pr6.add("•  Worked on Content and Traffic Generation\n");
-        pr6.add("•  Worked on Email and Social Media Marketing & Promotions\n");
+        pr6.add("•  Worked on Email & Social Marketing and Promotions\n");
         pr6.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph prWork7 = new Paragraph();
         prWork7.setFont(normalBoldFont);
-        prWork7.add("3. Android Development Trainee, Summer Training at HEWLETT PACKARD ENTERPRISE");
+        prWork7.add("\nAndroid Development Trainee, Summer Training at HEWLETT PACKARD ENTERPRISE");
         prWork7.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph pr8 = new Paragraph();
@@ -515,12 +511,11 @@ public class PDFActivity extends AppCompatActivity {
         pr9.setFont(normalFont);
         pr9.add("•  Learned basics of Android Application Development\n");
         pr9.add("•  Awarded A+ Grade in Android Test at Hewlett Packard\n");
-        pr9.add("•  Created Expense Manager Application\n");
         pr9.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph prWork10 = new Paragraph();
         prWork10.setFont(normalBoldFont);
-        prWork10.add("4. Technical Content Management, Worked at ETHICALHACKX");
+        prWork10.add("\nTechnical Content Management Intern, Worked at ETHICALHACKX");
         prWork10.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph pr11 = new Paragraph();
@@ -531,7 +526,7 @@ public class PDFActivity extends AppCompatActivity {
         Paragraph pr12 = new Paragraph();
         pr12.setFont(normalFont);
         pr12.add("•  Learned Website Creation & Management on Wordpress\n");
-        pr12.add("•  Worked on creating Technical Content for the website");
+        pr12.add("•  Worked on creating Technical Content for the website\n  ");
         pr12.setAlignment(Element.ALIGN_LEFT);
 
         //Add table Rows
@@ -560,7 +555,7 @@ public class PDFActivity extends AppCompatActivity {
 
         //________________________________________________________________________
         //EDUCATION
-        bigT2.addCell(addEmptyLine(1));
+        //bigT2.addCell(addEmptyLine(1));
         bigT2.addCell(addHeadTitle("Education Qualification"));
         //bigT2.addCell(addEmptyLine(1));
 
@@ -572,20 +567,20 @@ public class PDFActivity extends AppCompatActivity {
         //Generate Contents
         Paragraph e1 = new Paragraph();
         e1.setFont(normalFont);
-        e1.add("\u2022 B.Tech from AKTU State Govt. University (2018)\n");
-        e1.add(" Scored 71.45% (till 6th sem)\n");
+        e1.add("\n\u2022  B.Tech CSE from AKTU University (State Govt.)\n");
+        e1.add("   Grad 2018 (expected) | 71.45% (till 6th sem)\n");
         e1.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph e2 = new Paragraph();
         e2.setFont(normalFont);
-        e2.add("\u2022 Secondary School from CBSE (2014)\n");
-        e2.add(" Scored 78.00% \n");
+        e2.add("\u2022  Secondary School from CBSE\n");
+        e2.add("   Grad 2014 | 78.00% \n");
         e2.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph e3 = new Paragraph();
         e3.setFont(normalFont);
-        e3.add("\u2022 High School from CBSE (2012)\n");
-        e3.add(" Scored 9.4 - A1 (CGPA)\n");
+        e3.add("\u2022  High School from CBSE (2012)\n");
+        e3.add("   Grad 2012 | CGPA: 9.4/10 - A1\n  ");
         e3.setAlignment(Element.ALIGN_LEFT);
 
         ebar.addCell(e1);
@@ -597,7 +592,7 @@ public class PDFActivity extends AppCompatActivity {
         //________________________________________________________________________
         //SKILLS
 
-        bigT2.addCell(addEmptyLine(1));
+        //bigT2.addCell(addEmptyLine(1));
         bigT2.addCell(addHeadTitle("Skills and Competences"));
         //bigT2.addCell(addEmptyLine(1));
 
@@ -609,25 +604,25 @@ public class PDFActivity extends AppCompatActivity {
 
         Paragraph prSkills = new Paragraph();
         prSkills.setFont(normalFont);
-        prSkills.add("•  Android App Development\n");
+        prSkills.add("\n•  Android App Development\n");
         prSkills.add("•  Java Programming\n");
         prSkills.add("•  C/C++ Programming\n");
         prSkills.add("•  HTML and CSS\n");
-        prSkills.add("•  JavaScript\n");
-        prSkills.add("•  Firebase\n");
-        prSkills.add("•  Oracle 11g\n");
+        prSkills.add("•  JavaScript (novice)\n");
+        prSkills.add("•  Firebase (novice)\n");
+        prSkills.add("•  Oracle 11g (novice)\n");
         prSkills.setAlignment(Element.ALIGN_LEFT);
 
 
         Paragraph prs1 = new Paragraph();
         prs1.setFont(normalFont);
-        prs1.add("•  Android Studio\n");
-        prs1.add("•  NetBeans\n");
+        prs1.add("\n•  Android Studio\n");
+        prs1.add("•  NetBeans (novice)\n");
         prs1.add("•  Data Structures\n");
         prs1.add("•  Operating System\n");
         prs1.add("•  Software Engineering\n");
         prs1.add("•  Computer Networks\n");
-        prs1.add("•  Algorithms\n");
+        prs1.add("•  Algorithms\n ");
         prs1.setAlignment(Element.ALIGN_LEFT);
 
         sbar.addCell(prSkills);
@@ -641,7 +636,7 @@ public class PDFActivity extends AppCompatActivity {
         //ACHIEVEMENTSjh
 
         //bigT2.addCell(addColorLineEmptyTable(1));
-        bigT2.addCell(addEmptyLine(1));
+        //bigT2.addCell(addEmptyLine(1));
         bigT2.addCell(addHeadTitle("Achievements"));
         //bigT2.addCell(addEmptyLine(1));
 
@@ -651,11 +646,11 @@ public class PDFActivity extends AppCompatActivity {
 
         Paragraph prAchievements = new Paragraph();
         prAchievements.setFont(normalFont);
-        prAchievements.add("•  Won 1st Position in D/Encryption Event in Metacognition held at Galgotias College Technical Fest in March 2017\n");
-        prAchievements.add("•  Winner of CODE HUMMER coding event in Metacognition held at Galgotias Technical Fest in 2016\n");
-        prAchievements.add("•  Second position in CODE HUMMER event in Metacognition held at Galgotias Technical Fest in 2015\n");
-        prAchievements.add("•  Awarded Best Interviewer at College Job Fair 2017\n");
-        prAchievements.add("•  Semi-Finalist in Zonal Badminton Competition 2017\n");
+        prAchievements.add("\n•  2017  Winner, D/Encryption Event, Technical Fest\n");
+        prAchievements.add("•  2017  Awarded Best Interviewer at College Job Fair\n");
+        prAchievements.add("•  2017  Semi-Finalist in Zonal Badminton Competition\n");
+        prAchievements.add("•  2016  Winner, CODE HUMMER event, Technical Fest\n");
+        prAchievements.add("•  2015  2nd place, CODE HUMMER event, Technical Fest\n");
         prAchievements.setAlignment(Element.ALIGN_LEFT);
         abar.addCell(prAchievements);
         //}

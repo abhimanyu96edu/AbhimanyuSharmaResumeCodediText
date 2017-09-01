@@ -52,7 +52,7 @@ public class EPDFActivity extends AppCompatActivity {
         String FILE = Environment.getExternalStorageDirectory().toString() + "/A_PDF/Abhimanyu_Sharma_E_Resume.pdf";
 
 // Create New Blank Document
-        Document document = new Document(PageSize.A4, 5, 5, 20, 10); //left, right, top, bottom
+        Document document = new Document(PageSize.A4, 10, 5, 20, 10); //left, right, top, bottom
 
         // Create Pdf Writer for Writting into New Created Document
         try {
@@ -228,7 +228,7 @@ public class EPDFActivity extends AppCompatActivity {
         //document.add(tbar);
 
         Paragraph bar = new Paragraph();
-        bar.setFont(new Font(Font.FontFamily.HELVETICA, 10, Font.BOLD, myColor1));
+        bar.setFont(new Font(Font.FontFamily.HELVETICA, 9, Font.BOLD, new BaseColor(19, 150, 150)));
         bar.setAlignment(Element.ALIGN_CENTER);
         bar.add("abhimanyusharma96.edu@gmail.com | +91-7042218117 | abhimanyu96edu.github.io | linkedin.com/in/abhimanyu-sharma-0ba68b112/\n ");
 

@@ -52,7 +52,7 @@ public class EPDFActivity extends AppCompatActivity {
         String FILE = Environment.getExternalStorageDirectory().toString() + "/A_PDF/Abhimanyu_Sharma_E_Resume.pdf";
 
 // Create New Blank Document
-        Document document = new Document(PageSize.A4, 15, 15, 20, 10); //left, right, top, bottom
+        Document document = new Document(PageSize.A4, 5, 5, 20, 10); //left, right, top, bottom
 
         // Create Pdf Writer for Writting into New Created Document
         try {
@@ -110,37 +110,36 @@ public class EPDFActivity extends AppCompatActivity {
 //_____________________________________________________
 
 
-        //PdfPTable tH = new PdfPTable(3);
-        PdfPTable tH = new PdfPTable(2);
+        PdfPTable tH = new PdfPTable(3);
+        //PdfPTable tH = new PdfPTable(2);
         tH.setWidthPercentage(100.0f);
         tH.getDefaultCell().setBorder(PdfPCell.NO_BORDER);
 
         Paragraph row1 = new Paragraph();
-        row1.setFont(new Font(Font.FontFamily.HELVETICA, 22, Font.BOLD, myColor1));
+        row1.setFont(new Font(Font.FontFamily.HELVETICA, 25, Font.BOLD, myColor1));
         row1.setAlignment(Element.ALIGN_CENTER);
         row1.setLeading(15, 0);
-        row1.add("ABHIMANYU SHARMA\n ");
+        row1.add("ABHIMANYU SHARMA");
         //row1.add(u_name);
 
         Paragraph row2 = new Paragraph();
         row2.setFont(new Font(Font.FontFamily.HELVETICA, 10, Font.BOLD, myColor2));
         row2.setAlignment(Element.ALIGN_CENTER);
-        row2.add("\nMy Objective is to pursue an advanced development career oriented towards Mobile Application and Software Development and to contribute " +
-                "efficiently my skills and abilities for the growth of the organization along with enhancing my skills, knowledge and abilities by practical application\n ");
+        row2.add("\nLooking forward to work as Software & Mobile Application Developer and to contribute efficiently my skills and abilities for the growth of the organization while enhancing my skills & knowledge\n ");
 
-        Paragraph row4 = new Paragraph();
-        row4.setFont(new Font(Font.FontFamily.HELVETICA, 8, Font.NORMAL, myColor2));
-        row4.setAlignment(Element.ALIGN_CENTER);
-        row4.add("B.Tech 4th Year, Computer Science Engineering, \nGalgotias College of Engineering & Technology\n \n ");
+        //Paragraph row4 = new Paragraph();
+        //row4.setFont(new Font(Font.FontFamily.HELVETICA, 8, Font.NORMAL, myColor2));
+        //row4.setAlignment(Element.ALIGN_CENTER);
+        //row4.add("B.Tech 4th Year, Computer Science Engineering, \nGalgotias College of Engineering & Technology\n \n ");
 
 
         PdfPCell row_1 = new PdfPCell(row1);
         PdfPCell row_2 = new PdfPCell(row2);
-        PdfPCell row_4 = new PdfPCell(row4);
+        //PdfPCell row_4 = new PdfPCell(row4);
 
         row_1.setBorder(Rectangle.NO_BORDER);
         row_2.setBorder(Rectangle.NO_BORDER);
-        row_4.setBorder(Rectangle.NO_BORDER);
+        //row_4.setBorder(Rectangle.NO_BORDER);
 
         //Add table Rows
         PdfPTable th = new PdfPTable(1);
@@ -148,8 +147,8 @@ public class EPDFActivity extends AppCompatActivity {
 
         th.addCell(row_1);
         //th.addCell(row_4);//for spaced line
-        //th.addCell(row_2);
-/*
+        th.addCell(row_2);
+
         InputStream inputStream = getAssets().open("logo.png");
         //PUT THIS IMAGE IN ASSETS FOLDER OTHERWISE ERROR MIGHT APPEAR LIKE:  ExceptionConverter: java.io.IOException: The document has no pages.
 
@@ -162,12 +161,11 @@ public class EPDFActivity extends AppCompatActivity {
         logoImage.scalePercent(60);
         logoImage.scaleAbsolute(40, 40);
 
-*/
-        //tH.setWidths(new int[]{8, 1, 2});
-        tH.setWidths(new int[]{20, 1});
+
+        tH.setWidths(new int[]{8, 1, 2});
         tH.addCell(th);
         tH.addCell(new Phrase(" "));
-        //tH.addCell(logoImage);
+        tH.addCell(logoImage);
 
         document.add(tH);
 
@@ -188,22 +186,22 @@ public class EPDFActivity extends AppCompatActivity {
         //Font smallBoldFont = new Font(Font.FontFamily.TIMES_ROMAN, 9, Font.BOLD, BaseColor.DARK_GRAY);
 
         Paragraph emailBar = new Paragraph();
-        emailBar.setFont(new Font(Font.FontFamily.HELVETICA, 8, Font.BOLD, myColor1));
+        emailBar.setFont(new Font(Font.FontFamily.HELVETICA, 9, Font.NORMAL, myColor1));
         emailBar.setAlignment(Element.ALIGN_CENTER);
         emailBar.add("abhimanyusharma96.edu@gmail.com");
 
         Paragraph numberBar = new Paragraph();
-        numberBar.setFont(new Font(Font.FontFamily.HELVETICA, 8, Font.BOLD, myColor1));
+        numberBar.setFont(new Font(Font.FontFamily.HELVETICA, 9, Font.NORMAL, myColor1));
         numberBar.setAlignment(Element.ALIGN_CENTER);
         numberBar.add("+91-7042218117");
 
         Paragraph portfolioBar = new Paragraph();
-        portfolioBar.setFont(new Font(Font.FontFamily.HELVETICA, 8, Font.BOLD, myColor1));
+        portfolioBar.setFont(new Font(Font.FontFamily.HELVETICA, 9, Font.NORMAL, myColor1));
         portfolioBar.setAlignment(Element.ALIGN_CENTER);
         portfolioBar.add("abhimanyu96edu.github.io");
 
         Paragraph addressBar = new Paragraph();
-        addressBar.setFont(new Font(Font.FontFamily.HELVETICA, 8, Font.BOLD, myColor1));
+        addressBar.setFont(new Font(Font.FontFamily.HELVETICA, 9, Font.NORMAL, myColor1));
         addressBar.setAlignment(Element.ALIGN_CENTER);
         addressBar.add("linkedin.com/in/abhimanyu-sharma-0ba68b112/\n ");
 
@@ -227,7 +225,14 @@ public class EPDFActivity extends AppCompatActivity {
         tbar.addCell(c3);
         tbar.addCell(c4);
 
-        document.add(tbar);
+        //document.add(tbar);
+
+        Paragraph bar = new Paragraph();
+        bar.setFont(new Font(Font.FontFamily.HELVETICA, 10, Font.BOLD, myColor1));
+        bar.setAlignment(Element.ALIGN_CENTER);
+        bar.add("abhimanyusharma96.edu@gmail.com | +91-7042218117 | abhimanyu96edu.github.io | linkedin.com/in/abhimanyu-sharma-0ba68b112/\n ");
+
+        document.add(bar);
 
         document.add(addColorLineEmptyTableGray(1));
         //document.add(addEmptyLine(1));
@@ -256,7 +261,7 @@ public class EPDFActivity extends AppCompatActivity {
 
         //bigT1.addCell(addColorLineEmptyTable(1));
         //bigT1.addCell(addEmptyLine(1));
-        bigT1.addCell(addHeadTitle("Project Experience"));
+        bigT1.addCell(addHeadTitle("Projects"));
         //bigT1.addCell(addEmptyLine(1));
 
 
@@ -297,7 +302,7 @@ public class EPDFActivity extends AppCompatActivity {
 
         Paragraph pe6 = new Paragraph();
         pe6.setFont(normalFont);
-        pe6.add("Worked with Natural Language Processing Algorithm & IBM Watson APIS, App performs Real-Time Sentiment Analysis by first " +
+        pe6.add("Worked with Natural Language Processing Algorithm & IBM Watson APIs, App performs Real-Time Sentiment Analysis by first " +
                 "performing Audio Analysis & then applying NLP on extracted information for providing a valid sentiment\n");
         pe6.setAlignment(Element.ALIGN_LEFT);
 
@@ -309,7 +314,7 @@ public class EPDFActivity extends AppCompatActivity {
 
         Paragraph pe8 = new Paragraph();
         pe8.setFont(normalFont);
-        pe8.add("Used OWM POST APIs and parsed JSON response for fetching weather and location data along with 5 days forecast\n");
+        pe8.add("Used OWM POST APIs and parsed JSON response for fetching weather data along with 5 days forecast\n");
         pe8.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph pe9 = new Paragraph();
@@ -401,7 +406,7 @@ public class EPDFActivity extends AppCompatActivity {
         //Position of Responsibilty
 
         bigT1.addCell(addEmptyLine(1));
-        bigT1.addCell(addHeadTitle("Position Of Responsibilities"));
+        bigT1.addCell(addHeadTitle("Positions Of Responsibility"));
         //bigT2.addCell(addEmptyLine(1));
 
         PdfPTable porTable = new PdfPTable(1);//use autocomplete()
@@ -410,7 +415,7 @@ public class EPDFActivity extends AppCompatActivity {
 
         Paragraph por1 = new Paragraph();
         por1.setFont(normalFont);
-        por1.add("\n•  Conducted Android Workshop, Mobile Quiz,\n   ENIGMA-II, CRYPTOX at Galgotias College\n   (2015-2017)\n");
+        por1.add("\n•  Speaker & Coordinator of Android Workshop, Mobile Quiz,\n   Enigma-2, Crptox at Galgotias College\n   (2015-2017)\n");
         por1.add("\n•  Team Leader and Event Coordinator of Japanese\n   Anime Cosplay event “Animatsuri”, Rendezvous IIT-Delhi\n   (2015)\n");
         por1.add("\n•  Coordinator/Member LOOP Programming Club, FRAG\n   Gaming Club, Extreme Club, Sports Club, Enthiran Club\n   (2014-2017)\n");
         por1.setAlignment(Element.ALIGN_LEFT);
@@ -424,7 +429,7 @@ public class EPDFActivity extends AppCompatActivity {
         //________________________________________________________________________
         //WORK EXPERIENCE
 
-        bigT2.addCell(addHeadTitle("Work Experience"));
+        bigT2.addCell(addHeadTitle("Experience"));
         //bigT2.addCell(addEmptyLine(1));
 
 
@@ -434,7 +439,7 @@ public class EPDFActivity extends AppCompatActivity {
 
         Paragraph prWork1 = new Paragraph();
         prWork1.setFont(normalBoldFont);
-        prWork1.add("\nAndroid Intern, Worked at SHOPVIEW");
+        prWork1.add("\nSoftware Engineer Intern at SHOPVIEW");
         prWork1.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph pr2 = new Paragraph();
@@ -445,12 +450,12 @@ public class EPDFActivity extends AppCompatActivity {
         Paragraph pr3 = new Paragraph();
         pr3.setFont(normalFont);
         pr3.add("•  Worked on Volley for GET and POST APIs, Database\n   Management using Active Android, Optical Character\n   Recognition and JSON response parsing\n");
-        pr3.add("•  Worked on different ShopView application modules\n");
+        pr3.add("•  Built different ShopView Application Modules\n");
         pr3.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph prWork4 = new Paragraph();
         prWork4.setFont(normalBoldFont);
-        prWork4.add("\nTechnical Intern, Worked at PAPSWAP");
+        prWork4.add("\nTechnical Intern at PAPSWAP");
         prWork4.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph pr5 = new Paragraph();
@@ -461,8 +466,8 @@ public class EPDFActivity extends AppCompatActivity {
         Paragraph pr6 = new Paragraph();
         pr6.setFont(normalFont);
         pr6.add("•  Worked on PAPSWAP Android Application\n");
-        pr6.add("•  Worked on Content and Traffic Generation\n");
-        pr6.add("•  Worked on Email & Social Marketing and Promotions\n");
+        pr6.add("•  Generated Content and User Traffic\n");
+        pr6.add("•  Learned Email & Social Marketing and Promotions\n");
         pr6.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph prWork7 = new Paragraph();
@@ -483,7 +488,7 @@ public class EPDFActivity extends AppCompatActivity {
 
         Paragraph prWork10 = new Paragraph();
         prWork10.setFont(normalBoldFont);
-        prWork10.add("\nTechnical Content Management Intern, Worked at ETHICALHACKX");
+        prWork10.add("\nTechnical Content Management Intern at ETHICALHACKX");
         prWork10.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph pr11 = new Paragraph();
@@ -494,7 +499,7 @@ public class EPDFActivity extends AppCompatActivity {
         Paragraph pr12 = new Paragraph();
         pr12.setFont(normalFont);
         pr12.add("•  Learned Website Creation & Management on Wordpress\n");
-        pr12.add("•  Worked on creating Technical Content for the website\n  ");
+        pr12.add("•  Created Technical Content for the website\n  ");
         pr12.setAlignment(Element.ALIGN_LEFT);
 
         //Add table Rows
@@ -524,7 +529,7 @@ public class EPDFActivity extends AppCompatActivity {
         //________________________________________________________________________
         //EDUCATION
         //bigT2.addCell(addEmptyLine(1));
-        bigT2.addCell(addHeadTitle("Education Qualification"));
+        bigT2.addCell(addHeadTitle("Educational Qualification"));
         //bigT2.addCell(addEmptyLine(1));
 
 
@@ -535,7 +540,7 @@ public class EPDFActivity extends AppCompatActivity {
         //Generate Contents
         Paragraph e1 = new Paragraph();
         e1.setFont(normalFont);
-        e1.add("\n\u2022  B.Tech in CSE from AKTU University (State Govt.)\n");
+        e1.add("\n\u2022  Bachelor's Degree in Computer Science and Engineering |\n   AKTU University (State Govt.) |\n   Galgotias College of Engineering & Technology\n ");
         e1.add("   Grad 2018 (expected) | 71.45% (till 6th sem)\n");
         e1.setAlignment(Element.ALIGN_LEFT);
 
@@ -547,7 +552,7 @@ public class EPDFActivity extends AppCompatActivity {
 
         Paragraph e3 = new Paragraph();
         e3.setFont(normalFont);
-        e3.add("\u2022  High School from CBSE (2012)\n");
+        e3.add("\u2022  High School from CBSE\n");
         e3.add("   Grad 2012 | CGPA: 9.4/10 - A1\n  ");
         e3.setAlignment(Element.ALIGN_LEFT);
 
@@ -561,7 +566,7 @@ public class EPDFActivity extends AppCompatActivity {
         //SKILLS
 
         //bigT2.addCell(addEmptyLine(1));
-        bigT2.addCell(addHeadTitle("Skills and Competences"));
+        bigT2.addCell(addHeadTitle("Skills and Competencies"));
         //bigT2.addCell(addEmptyLine(1));
 
 
@@ -576,7 +581,6 @@ public class EPDFActivity extends AppCompatActivity {
         prSkills.add("•  Java Programming\n");
         prSkills.add("•  C/C++ Programming\n");
         prSkills.add("•  HTML and CSS\n");
-        prSkills.add("•  JavaScript (novice)\n");
         prSkills.add("•  Firebase (novice)\n");
         prSkills.add("•  Oracle 11g (novice)\n");
         prSkills.setAlignment(Element.ALIGN_LEFT);
@@ -588,7 +592,6 @@ public class EPDFActivity extends AppCompatActivity {
         prs1.add("\n•  Data Structures\n");
         prs1.add("•  Operating System\n");
         prs1.add("•  Software Engineering\n");
-        prs1.add("•  Computer Networks\n");
         prs1.add("•  Algorithms\n");
         prs1.add("•  Android Studio\n");
         prs1.add("•  NetBeans (novice)\n");
@@ -615,10 +618,10 @@ public class EPDFActivity extends AppCompatActivity {
 
         Paragraph prAchievements = new Paragraph();
         prAchievements.setFont(normalFont);
-        prAchievements.add("\n•  2017  Winner, D/Encryption Event, Technical Fest\n");
-        prAchievements.add("•  2017  Awarded Best Interviewer at College Job Fair\n");
+        prAchievements.add("\n•  2017  WINNER, D/Encryption Event, Technical Fest\n");
+        prAchievements.add("•  2017  Awarded BEST Interviewer at College Job Fair\n");
         prAchievements.add("•  2017  Semi-Finalist in Zonal Badminton Competition\n");
-        prAchievements.add("•  2016  Winner, CODE HUMMER event, Technical Fest\n");
+        prAchievements.add("•  2016  WINNER, CODE HUMMER event, Technical Fest\n");
         prAchievements.add("•  2015  2nd place, CODE HUMMER event, Technical Fest\n");
         prAchievements.setAlignment(Element.ALIGN_LEFT);
         abar.addCell(prAchievements);

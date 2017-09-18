@@ -49,7 +49,7 @@ public class EPDFActivity extends AppCompatActivity {
         File myDir = new File(root + "/A_PDF");
         myDir.mkdirs();
 
-        String FILE = Environment.getExternalStorageDirectory().toString() + "/A_PDF/Abhimanyu_Sharma_E_Resume.pdf";
+        String FILE = Environment.getExternalStorageDirectory().toString() + "/A_PDF/Abhimanyu_Sharma_Resume.pdf";
 
 // Create New Blank Document
         Document document = new Document(PageSize.A4, 10, 5, 20, 10); //left, right, top, bottom
@@ -270,6 +270,19 @@ public class EPDFActivity extends AppCompatActivity {
         pebar.setWidthPercentage(100.0f);
         pebar.getDefaultCell().setBorder(PdfPCell.NO_BORDER);
 
+        Paragraph pe21 = new Paragraph();
+        pe21.setFont(normalBoldFont);
+        Anchor anchor21= new Anchor("\nSentiment Detector/Analyzer  " + "(4th year project - Ongoing)", normalBoldFont);
+        anchor21.setReference("https://github.com/abhimanyu96edu?tab=repositories");
+        pe21.add(anchor21);
+        pe21.setAlignment(Element.ALIGN_LEFT);
+
+        Paragraph pe22 = new Paragraph();
+        pe22.setFont(normalFont);
+        pe22.add("Improving Sentiment Analysis by first performing Audio Analysis & then applying NLP on extracted information and providing a valid sentiment value\n");
+        pe22.setAlignment(Element.ALIGN_LEFT);
+
+
         Paragraph pe1 = new Paragraph();
         pe1.setFont(normalBoldFont);
         Anchor anchor1= new Anchor("\nRinc. Resume App    " + "(JULY 2017)", normalBoldFont);
@@ -279,13 +292,12 @@ public class EPDFActivity extends AppCompatActivity {
 
         Paragraph pe2 = new Paragraph();
         pe2.setFont(normalFont);
-        pe2.add("Worked with Active Android for complex database management, iText library for PDF, Material Design UI & created a totally Offline Application\n");
+        pe2.add("Worked with Active Android for complex database management, iText library for PDF, Material Design UI & created a totally Offline Application, 300+ downloads\n");
         pe2.setAlignment(Element.ALIGN_LEFT);
-
 
         Paragraph pe3 = new Paragraph();
         Anchor anchor2= new Anchor("\nBit Math    " + "(MAY 2017)", normalBoldFont);
-        anchor2.setReference("https://play.google.com/store/apps/details?id=com.abhimanyusharma.resume&hl=en");
+        anchor2.setReference("https://drive.google.com/open?id=0Bwv1sAEhO8I4RWp6cHprNzN1Um8");
         pe3.add(anchor2);
         pe3.setAlignment(Element.ALIGN_LEFT);
 
@@ -328,6 +340,9 @@ public class EPDFActivity extends AppCompatActivity {
         pe10.add("Worked with SQL for complex database management, developed interactive & user friendly UI\n");
         pe10.setAlignment(Element.ALIGN_LEFT);
 
+
+        pebar.addCell(pe21);
+        pebar.addCell(pe22);
 
         pebar.addCell(pe1);
         pebar.addCell(pe2);
@@ -392,7 +407,7 @@ public class EPDFActivity extends AppCompatActivity {
         prLink.setAlignment(Element.ALIGN_LEFT);
 
 
-        Font projectLinkFont1 = new Font(Font.FontFamily.HELVETICA, 8, Font.BOLD, new BaseColor(2, 177, 178));
+        Font projectLinkFont1 = new Font(Font.FontFamily.HELVETICA, 8, Font.BOLD, new BaseColor(19, 150, 150));
         Paragraph prLink1 = new Paragraph();
         prLink1.setFont(projectLinkFont1);
         prLink1.add("\nhttps://github.com/abhimanyu96edu?tab=repositories");
@@ -467,7 +482,7 @@ public class EPDFActivity extends AppCompatActivity {
         pr6.setFont(normalFont);
         pr6.add("•  Worked on PAPSWAP Android Application\n");
         pr6.add("•  Generated Content and User Traffic\n");
-        pr6.add("•  Learned Email & Social Marketing and Promotions\n");
+        pr6.add("•  Learnt Email & Social Marketing and Promotions\n");
         pr6.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph prWork7 = new Paragraph();
@@ -482,7 +497,7 @@ public class EPDFActivity extends AppCompatActivity {
 
         Paragraph pr9 = new Paragraph();
         pr9.setFont(normalFont);
-        pr9.add("•  Learned basics of Android Application Development\n");
+        pr9.add("•  Learnt basics of Android Application Development\n");
         pr9.add("•  Awarded A+ Grade in Android Test at Hewlett Packard\n");
         pr9.setAlignment(Element.ALIGN_LEFT);
 
@@ -498,7 +513,7 @@ public class EPDFActivity extends AppCompatActivity {
 
         Paragraph pr12 = new Paragraph();
         pr12.setFont(normalFont);
-        pr12.add("•  Learned Website Creation & Management on Wordpress\n");
+        pr12.add("•  Learnt Website Creation & Management on Wordpress\n");
         pr12.add("•  Created Technical Content for the website\n  ");
         pr12.setAlignment(Element.ALIGN_LEFT);
 
@@ -540,8 +555,8 @@ public class EPDFActivity extends AppCompatActivity {
         //Generate Contents
         Paragraph e1 = new Paragraph();
         e1.setFont(normalFont);
-        e1.add("\n\u2022  Bachelor's Degree in Computer Science and Engineering |\n   AKTU University (State Govt.) |\n   Galgotias College of Engineering & Technology\n ");
-        e1.add("   Grad 2018 (expected) | 71.45% (till 6th sem)\n");
+        e1.add("\n\u2022  Bachelor's Degree in Computer Science and Engineering |\n   Dr. APJ Abdul Kalam Technical University (State Govt.) |\n   Galgotias College of Engineering & Technology\n ");
+        e1.add("  Grad 2018 (expected) | 71.45% (till 6th sem)\n");
         e1.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph e2 = new Paragraph();
@@ -581,8 +596,7 @@ public class EPDFActivity extends AppCompatActivity {
         prSkills.add("•  Java Programming\n");
         prSkills.add("•  C/C++ Programming\n");
         prSkills.add("•  HTML and CSS\n");
-        prSkills.add("•  Firebase (novice)\n");
-        prSkills.add("•  Oracle 11g (novice)\n");
+        prSkills.add("•  Firebase/Oracle 11g \n");
         prSkills.setAlignment(Element.ALIGN_LEFT);
 
 
@@ -591,10 +605,9 @@ public class EPDFActivity extends AppCompatActivity {
 
         prs1.add("\n•  Data Structures\n");
         prs1.add("•  Operating System\n");
-        prs1.add("•  Software Engineering\n");
-        prs1.add("•  Algorithms\n");
+        prs1.add("•  DBMS\n");
+        prs1.add("•  Volley\n");
         prs1.add("•  Android Studio\n");
-        prs1.add("•  NetBeans (novice)\n");
         prs1.setAlignment(Element.ALIGN_LEFT);
 
         sbar.addCell(prSkills);

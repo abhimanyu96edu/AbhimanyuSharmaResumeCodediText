@@ -454,7 +454,7 @@ public class EPDFActivity extends AppCompatActivity {
 
         Paragraph prWork1 = new Paragraph();
         prWork1.setFont(normalBoldFont);
-        prWork1.add("\nSoftware Engineer Intern at SHOPVIEW");
+        prWork1.add("\nSoftware Engineer Intern at SIDEREAL DOT TECHNOLOGIES");
         prWork1.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph pr2 = new Paragraph();
@@ -475,7 +475,7 @@ public class EPDFActivity extends AppCompatActivity {
 
         Paragraph pr5 = new Paragraph();
         pr5.setFont(normalBoldFont);
-        pr5.add("(FEBRUARY 2017 \u2014 APRIL 2017)");
+        pr5.add("(MARCH 2017 \u2014 APRIL 2017)");
         pr5.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph pr6 = new Paragraph();

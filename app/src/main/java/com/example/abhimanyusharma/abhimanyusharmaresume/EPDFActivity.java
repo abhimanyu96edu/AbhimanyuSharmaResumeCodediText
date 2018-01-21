@@ -279,7 +279,7 @@ public class EPDFActivity extends AppCompatActivity {
 
         Paragraph pe22 = new Paragraph();
         pe22.setFont(normalFont);
-        pe22.add("Improving Sentiment Analysis by first performing Audio Analysis & then applying NLP on extracted information and providing a valid sentiment value\n");
+        pe22.add("Improving Sentiment Analysis by applying Combined Approach (proposed) & applying Pitch Analysis for providing a valid sentiment value\n");
         pe22.setAlignment(Element.ALIGN_LEFT);
 
 
@@ -292,7 +292,7 @@ public class EPDFActivity extends AppCompatActivity {
 
         Paragraph pe2 = new Paragraph();
         pe2.setFont(normalFont);
-        pe2.add("Worked with Active Android for complex database management, iText library for PDF, Material Design UI & created a totally Offline Application, 300+ downloads\n");
+        pe2.add("Worked with Active Android for complex database management, iText library for PDF, Material Design UI & created a totally Offline App, 4500+ downloads\n");
         pe2.setAlignment(Element.ALIGN_LEFT);
 
         Paragraph pe3 = new Paragraph();
@@ -596,7 +596,7 @@ public class EPDFActivity extends AppCompatActivity {
         prSkills.add("•  Java Programming\n");
         prSkills.add("•  C/C++ Programming\n");
         prSkills.add("•  HTML and CSS\n");
-        prSkills.add("•  Firebase/Oracle 11g \n");
+        prSkills.add("•  Firebase \n");
         prSkills.setAlignment(Element.ALIGN_LEFT);
 
 
@@ -606,7 +606,7 @@ public class EPDFActivity extends AppCompatActivity {
         prs1.add("\n•  Data Structures\n");
         prs1.add("•  Operating System\n");
         prs1.add("•  DBMS\n");
-        prs1.add("•  Volley\n");
+        prs1.add("•  Volley/ JSON\n");
         prs1.add("•  Android Studio\n");
         prs1.setAlignment(Element.ALIGN_LEFT);
 
